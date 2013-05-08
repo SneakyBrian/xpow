@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xpow", "xpow\xpow.csproj", "{E292ED5C-21F4-4E87-9249-AAE9B4C4C308}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xpow.testbed.mvc", "xpow.testbed.mvc\xpow.testbed.mvc.csproj", "{192DA44D-4306-4E43-AAAA-645E40C93114}"
