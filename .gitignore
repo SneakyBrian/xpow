@@ -1,0 +1,6 @@
+.hg/*
+*/bin/*
+*/obj/*
+*.user
+*.suo
+.hgignore

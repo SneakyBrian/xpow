@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xpow", "xpow\xpow.csproj", "{E292ED5C-21F4-4E87-9249-AAE9B4C4C308}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xpow.testbed.mvc", "xpow.testbed.mvc\xpow.testbed.mvc.csproj", "{192DA44D-4306-4E43-AAAA-645E40C93114}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xpow.testbed.mvc.Tests", "xpow.testbed.mvc.Tests\xpow.testbed.mvc.Tests.csproj", "{59C7053D-46EF-4371-A898-F850C08DD946}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E292ED5C-21F4-4E87-9249-AAE9B4C4C308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E292ED5C-21F4-4E87-9249-AAE9B4C4C308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E292ED5C-21F4-4E87-9249-AAE9B4C4C308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E292ED5C-21F4-4E87-9249-AAE9B4C4C308}.Release|Any CPU.Build.0 = Release|Any CPU
+		{192DA44D-4306-4E43-AAAA-645E40C93114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{192DA44D-4306-4E43-AAAA-645E40C93114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{192DA44D-4306-4E43-AAAA-645E40C93114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{192DA44D-4306-4E43-AAAA-645E40C93114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59C7053D-46EF-4371-A898-F850C08DD946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59C7053D-46EF-4371-A898-F850C08DD946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59C7053D-46EF-4371-A898-F850C08DD946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59C7053D-46EF-4371-A898-F850C08DD946}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
