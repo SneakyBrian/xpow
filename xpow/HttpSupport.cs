@@ -37,15 +37,15 @@ namespace xpow
 
         public static bool ValidateResponse(HttpContextBase context)
         {
-            var requestString = context.Request.Cookies[REQUEST_HEADER] != null ?
-                context.Request.Cookies[REQUEST_HEADER].Value : 
+            var requestString = context.Request.Params[REQUEST_HEADER] != null ?
+                context.Request.Params[REQUEST_HEADER] : 
                 context.Request.Headers[REQUEST_HEADER];
 
             if (string.IsNullOrWhiteSpace(requestString))
                 return false;
 
-            var responseString = context.Request.Cookies[RESPONSE_HEADER] != null ?
-                context.Request.Cookies[RESPONSE_HEADER].Value : 
+            var responseString = context.Request.Params[RESPONSE_HEADER] != null ?
+                context.Request.Params[RESPONSE_HEADER] : 
                 context.Request.Headers[RESPONSE_HEADER];
 
             if (string.IsNullOrWhiteSpace(responseString))

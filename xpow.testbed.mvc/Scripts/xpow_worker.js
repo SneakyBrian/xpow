@@ -1,7 +1,11 @@
-﻿
+﻿//for script compatibility
+var window = this;
+
+importScripts('Crypto-JS/crypto/crypto-min.js', 'Crypto-JS/crypto-sha256/crypto-sha256.js');
+
 onmessage = function (event) {
 
-    debugger;
+    //debugger;
 
     var request = event.data;
 
