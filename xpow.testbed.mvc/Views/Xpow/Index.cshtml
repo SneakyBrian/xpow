@@ -9,7 +9,7 @@
         //debugger;
 
         $('#response').text(response);
-        $('#result').text("not found");
+        $('#result').text("Not found, still looking...");
 
     });
 
@@ -18,17 +18,11 @@
         //debugger;
 
         $('#response').text(response);
-        $('#result').text("found!");
+        $('#result').text("Woohoo! Solved the problem! You can now continue...");
 
         //TODO: Redirect back to original page,
         //      Setting original page parameters,
         //      post variables and query string parameters
-
-    });
-
-    $(function () {
-
-
 
     });
 </script>
@@ -37,5 +31,5 @@
 
 <div>
 <p>Checking <span id="response"></span>...</p>
-<p><span id="result">Initialising</span></p>
+<p><span id="result">Initialising...</span></p>
 </div>
