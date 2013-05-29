@@ -9,7 +9,8 @@ namespace xpow
 {
     public class Processor
     {
-        const string LEADING_ZEROES = "LeadingZeroes";
+        const string LEADING_BYTES = "LeadingBytes";
+        const string LEADING_BYTES_VALUE = "LeadingBytesValue";
 
         public byte[] GenerateRequestData()
         {
@@ -19,23 +20,22 @@ namespace xpow
 
             random.NextBytes(requestData);
 
-            requestData[0] = byte.Parse(ConfigurationManager.AppSettings[LEADING_ZEROES]);
-
-            if (requestData[0] > 32)
-                throw new ApplicationException("Number of leading zeroes cannot be greater than 32");
+            requestData[0] = byte.Parse(ConfigurationManager.AppSettings[LEADING_BYTES]);
+            requestData[1] = byte.Parse(ConfigurationManager.AppSettings[LEADING_BYTES_VALUE]);
 
             return requestData;            
         }
 
         public bool ValidateResponse(byte[] requestData, byte[] responseData)
         {
-            var leadingZeroes = byte.Parse(ConfigurationManager.AppSettings[LEADING_ZEROES]);
+            var leadingBytes = byte.Parse(ConfigurationManager.AppSettings[LEADING_BYTES]);
+            var leadingBytesValue = byte.Parse(ConfigurationManager.AppSettings[LEADING_BYTES_VALUE]);
 
-            if (leadingZeroes > 32)
-                throw new ApplicationException("Number of leading zeroes cannot be greater than 32");
+            if (leadingBytes != requestData[0])
+                return false;
 
-            if (leadingZeroes != requestData[0])
-                throw new ApplicationException("Request Configuration Data does not match Application Configuration Data");
+            if (leadingBytesValue != requestData[1])
+                return false;
 
             var combined = requestData.Concat(responseData).ToArray();
 
@@ -43,14 +43,22 @@ namespace xpow
             {
                 var hash = sha256.ComputeHash(combined);
 
-                for (var i = 0; i < leadingZeroes; ++i)
-                {
-                    if (hash[i] > 0)
-                        return false;
-                }
-            }
+                var considerData = hash.Take(leadingBytes).ToArray();
 
-            return true;
+                var considerValue = ByteArrayToValue(considerData);
+
+                return considerValue <= leadingBytesValue;
+            }
+        }
+
+        public static int ByteArrayToValue(byte[] byteArray)
+        {
+            var value = 0;
+            for (var i = byteArray.Length - 1; i >= 0; i--)
+            {
+                value = (value * 256) + byteArray[i];
+            }
+            return value;
         }
 
         public static string ByteArrayToString(byte[] ba)
